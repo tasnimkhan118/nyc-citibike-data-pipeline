@@ -20,6 +20,4 @@ Cloud Scalability: Designed the pipeline to append data, allowing for historical
 Data Cleaning: Converted Unix timestamps to readable NYC time and filtered for active rental stations.
 
 
-![NYC Citi Bike Dashboard](dashboard_preview.png)
-
-[🔗 View Live Interactive Dashboard](https://datastudio.google.com/s/gX8ykRdaRuA)
+[![Citi Bike Live Dashboard](./dashboard_preview.png)](https://datastudio.google.com/reporting/7de0a043-f3fc-4002-b47e-0c79e998d294)
