@@ -3,7 +3,7 @@
 [![NYC Citi Bike Dashboard](./dashboard_preview.png)](https://datastudio.google.com/reporting/7de0a043-f3fc-4002-b47e-0c79e998d294)
 *Note: Click the image above to view the interactive dashboard. Data is currently updated via manual backend execution.*
 
-## 📌 Project Overview
+## Project Overview
 
 This project is an end-to-end data pipeline designed to monitor the live status of the NYC Citi Bike system. It transforms raw, high-frequency JSON data from the **General Bikeshare Feed Specification (GBFS)** into a clean, deduplicated analytical dashboard.
 
@@ -11,7 +11,7 @@ The primary challenge solved in this project was **data integrity over time**. B
 
 ---
 
-## 🛠️ The Tech Stack
+## Stack
 
 * **Language:** Python (Extraction & ETL)
 * **Data Warehouse:** Google BigQuery
@@ -20,7 +20,7 @@ The primary challenge solved in this project was **data integrity over time**. B
 
 ---
 
-## 🏗️ Data Architecture
+## Data Architecture
 
 1.  **Extraction:** A Python script polls the Citi Bike GBFS API to capture real-time station status, including bike availability, e-bike counts, and dock capacity.
 2.  **Load:** Data is appended to a "Live Status" table in **BigQuery**, preserving historical records for future time-series analysis.
@@ -38,7 +38,7 @@ The primary challenge solved in this project was **data integrity over time**. B
 
 ---
 
-## 📈 Key Insights & Features
+## Key Insights
 
 * **Accurate Fleet Totals:** By implementing the `ROW_NUMBER()` filter, the dashboard correctly reflects the actual fleet size (~30,000 bikes) rather than inflated historical totals.
 * **Identification of "Mega-Stations":** Identified high-traffic hubs such as **E 40 St & 5 Ave**, which features **85+ docks**, significantly surpassing the 79-dock "superstation" records established in 2019.
@@ -47,7 +47,7 @@ The primary challenge solved in this project was **data integrity over time**. B
 
 ---
 
-## 🚀 Future Roadmap
+## Future Plan
 
 * **Full Automation:** Transitioning the Python ETL to **Google Cloud Functions** and **Cloud Scheduler** for 24/7 automated updates.
 * **Geospatial Expansion:** Adapting the pipeline to include **Chicago Divvy** data to compare urban mobility patterns between New York and Chicago.
@@ -55,7 +55,7 @@ The primary challenge solved in this project was **data integrity over time**. B
 
 ---
 
-## 📂 How to Run
+## How to Run
 
 1. Execute the `citi_bike_pipeline.py` script to fetch current API data and push to BigQuery.
 2. The BigQuery View `latest_snapshot` automatically updates to include the new records.
