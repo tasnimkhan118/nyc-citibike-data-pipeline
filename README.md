@@ -18,3 +18,8 @@ Automated Merging: Performed a programmatic "VLOOKUP" to join live station statu
 Cloud Scalability: Designed the pipeline to append data, allowing for historical trend analysis (e.g., peak-hour bike shortages).
 
 Data Cleaning: Converted Unix timestamps to readable NYC time and filtered for active rental stations.
+
+
+![NYC Citi Bike Dashboard](dashboard_preview.png)
+
+[🔗 View Live Interactive Dashboard](https://datastudio.google.com/s/gX8ykRdaRuA)
