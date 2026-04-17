@@ -5,9 +5,9 @@
 
 ## Project Overview
 
-This project is an end-to-end data pipeline designed to monitor the live status of the NYC Citi Bike system. It transforms raw, high-frequency JSON data from the **General Bikeshare Feed Specification (GBFS)** into a clean, deduplicated analytical dashboard.
+This project is an end-to-end data pipeline designed to monitor the live status of the NYC Citi Bike system. It transforms raw JSON data from the **General Bikeshare Feed Specification (GBFS)** into a clean dashboard.
 
-The primary challenge solved in this project was **data integrity over time**. By moving away from simple cumulative sums to a ranked "Latest Snapshot" model, the dashboard provides a high-fidelity view of urban mobility across 2,400+ active stations.
+The primary challenge solved in this project was **data integrity over time**. By moving away from simple cumulative sums to a ranked "Latest Snapshot" model, the dashboard now provides a view of urban mobility across 2,400+ active stations.
 
 ---
 
@@ -15,7 +15,7 @@ The primary challenge solved in this project was **data integrity over time**. B
 
 * **Language:** Python (Extraction & ETL)
 * **Data Warehouse:** Google BigQuery
-* **Visualization:** Looker Studio
+* **Visualization:** Looker Studio (Data Studio)
 * **SQL Logic:** Advanced Window Functions (`ROW_NUMBER()`, `PARTITION BY`)
 
 ---
