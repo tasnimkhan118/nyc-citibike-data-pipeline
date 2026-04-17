@@ -34,7 +34,7 @@ The primary challenge solved in this project was **data integrity over time**. B
     )
     WHERE row_num = 1
     ```
-4.  **Visualization:** The deduplicated snapshot is piped into **Looker Studio**, rendering a geospatial heatmap and real-time operational scorecards.
+4.  **Visualization:** The deduplicated snapshot is piped into **Looker Studio**, rendering a geospatial bubble map and real-time operational scorecards.
 
 ---
 
