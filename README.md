@@ -7,7 +7,6 @@
 
 This project is an end-to-end data pipeline designed to monitor the live status of the NYC Citi Bike system. It transforms JSON data from the **General Bikeshare Feed Specification (GBFS)** into an interactive dashboard.
 
----
 
 ## Stack
 
@@ -16,7 +15,6 @@ This project is an end-to-end data pipeline designed to monitor the live status 
 * **Visualization:** Looker Studio (Data Studio)
 * **SQL Logic:** Advanced Window Functions (`ROW_NUMBER()`, `PARTITION BY`)
 
----
 
 ## Data Architecture
 
@@ -34,14 +32,12 @@ This project is an end-to-end data pipeline designed to monitor the live status 
     ```
 4.  **Visualization:** The deduplicated snapshot is put into **Looker Studio**, to create a geospatial bubble map and real-time scorecards displaying current E-Bike counts at any given station(s) selected.
 
----
 
 ## Key Insights
 
 * **Identification of New High Volume Stations:** Identified high-traffic bike stations such as **E 40 St & 5 Ave**, which features **85+ docks**, significantly surpassing the 79-dock superstation records established in 2019.
 * **Operational Monitoring:** Integrated `is_renting` status to distinguish between active stations and those currently out of service for maintenance.
 
----
 
 ## Future Plan
 
@@ -49,7 +45,6 @@ This project is an end-to-end data pipeline designed to monitor the live status 
 * **Geospatial Expansion:** Adapting the pipeline to include **Chicago Divvy** data to compare urban mobility patterns between New York and Chicago.
 * **Predictive Analysis:** Utilizing the accumulated historical data in BigQuery to build a machine learning model that forecasts station "fullness" trends.
 
----
 
 ## How to Run
 
