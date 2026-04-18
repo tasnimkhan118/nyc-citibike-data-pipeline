@@ -5,9 +5,7 @@
 
 ## Project Overview
 
-This project is an end-to-end data pipeline designed to monitor the live status of the NYC Citi Bike system. It transforms raw JSON data from the **General Bikeshare Feed Specification (GBFS)** into a clean dashboard.
-
-The primary challenge solved in this project was **data integrity over time**. By moving away from simple cumulative sums to a ranked "Latest Snapshot" model, the dashboard now provides a view of urban mobility across 2,400+ active stations.
+This project is an end-to-end data pipeline designed to monitor the live status of the NYC Citi Bike system. It transforms JSON data from the **General Bikeshare Feed Specification (GBFS)** into an interactive dashboard.
 
 ---
 
@@ -24,7 +22,7 @@ The primary challenge solved in this project was **data integrity over time**. B
 
 1.  **Extraction:** A Python script polls the Citi Bike GBFS API to capture real-time station status, including bike availability, e-bike counts, and dock capacity.
 2.  **Load:** Data is appended to a "Live Status" table in **BigQuery**, preserving historical records for future time-series analysis.
-3.  **Transformation (Deduplication):** To ensure the dashboard only shows the current state of the city, I engineered a **BigQuery SQL View**. This view uses ranking logic to isolate the single most recent record for every individual station:
+3.  **Transformation (Deduplication):** To ensure the dashboard only shows the current state of the city, I created a **BigQuery SQL View**. This view uses ranking logic to isolate the single most recent record for every individual station:
     ```sql
     SELECT *
     FROM (
@@ -34,15 +32,13 @@ The primary challenge solved in this project was **data integrity over time**. B
     )
     WHERE row_num = 1
     ```
-4.  **Visualization:** The deduplicated snapshot is piped into **Looker Studio**, rendering a geospatial bubble map and real-time operational scorecards.
+4.  **Visualization:** The deduplicated snapshot is put into **Looker Studio**, to create a geospatial bubble map and real-time scorecards displaying current E-Bike counts at any given station(s) selected.
 
 ---
 
 ## Key Insights
 
-* **Accurate Fleet Totals:** By implementing the `ROW_NUMBER()` filter, the dashboard correctly reflects the actual fleet size (~30,000 bikes) rather than inflated historical totals.
-* **Identification of "Mega-Stations":** Identified high-traffic hubs such as **E 40 St & 5 Ave**, which features **85+ docks**, significantly surpassing the 79-dock "superstation" records established in 2019.
-* **E-Bike vs. Classic Distribution:** Real-time monitoring of the electric vs. manual bike ratio to identify supply-demand imbalances.
+* **Identification of "Mega-Stations":** Identified high-traffic bike stations such as **E 40 St & 5 Ave**, which features **85+ docks**, significantly surpassing the 79-dock superstation records established in 2019.
 * **Operational Monitoring:** Integrated `is_renting` status to distinguish between active stations and those currently out of service for maintenance.
 
 ---
