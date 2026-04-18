@@ -38,7 +38,7 @@ This project is an end-to-end data pipeline designed to monitor the live status 
 
 ## Key Insights
 
-* **Identification of "Mega-Stations":** Identified high-traffic bike stations such as **E 40 St & 5 Ave**, which features **85+ docks**, significantly surpassing the 79-dock superstation records established in 2019.
+* **Identification of New High Volume Stations:** Identified high-traffic bike stations such as **E 40 St & 5 Ave**, which features **85+ docks**, significantly surpassing the 79-dock superstation records established in 2019.
 * **Operational Monitoring:** Integrated `is_renting` status to distinguish between active stations and those currently out of service for maintenance.
 
 ---
