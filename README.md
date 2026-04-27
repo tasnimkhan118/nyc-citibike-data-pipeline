@@ -8,7 +8,7 @@
 This project is an end-to-end data pipeline designed to monitor the live status of the NYC Citi Bike system. It transforms JSON data from the **General Bikeshare Feed Specification (GBFS)** into an interactive dashboard.
 
 
-## Stack
+## Tools
 
 * **Language:** Python (Extraction & ETL)
 * **Data Warehouse:** Google BigQuery
