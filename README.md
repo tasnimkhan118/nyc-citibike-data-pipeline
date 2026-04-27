@@ -13,10 +13,10 @@ This project is an end-to-end data pipeline designed to monitor the live status 
 * **Language:** Python (Extraction & ETL)
 * **Data Warehouse:** Google BigQuery
 * **Visualization:** Looker Studio (Data Studio)
-* **SQL Logic:** Advanced Window Functions (`ROW_NUMBER()`, `PARTITION BY`)
+* **SQL:** Window Functions 
 
 
-## Data Architecture
+## Data Model
 
 1.  **Extraction:** A Python script polls the Citi Bike GBFS API to capture real-time station status, including bike availability, e-bike counts, and dock capacity.
 2.  **Load:** Data is appended to a "Live Status" table in **BigQuery**, preserving historical records for future time-series analysis.
@@ -32,11 +32,6 @@ This project is an end-to-end data pipeline designed to monitor the live status 
     ```
 4.  **Visualization:** The deduplicated snapshot is put into **Looker Studio**, to create a geospatial bubble map and real-time scorecards displaying current E-Bike counts at any given station(s) selected.
 
-
-## Key Insights
-
-* **Identification of New High Volume Stations:** Identified high-traffic bike stations such as **E 40 St & 5 Ave**, which features **85+ docks**, significantly surpassing the 79-dock superstation records established in 2019.
-* **Operational Monitoring:** Integrated `is_renting` status to distinguish between active stations and those currently out of service for maintenance.
 
 
 ## Future Plan
